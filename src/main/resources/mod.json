@@ -1,0 +1,11 @@
+{
+  "name": "betterminimap",
+  "displayName": "betterMiniMap",
+  "author": "DeterMination",
+  "version": "v1.0.0",
+  "minGameVersion": 154,
+  "description": "Client-side minimap enhancement: unit icons with facing direction, dynamic same-unit clustering by minimap pixel distance, and filter settings.",
+  "main": "betterminimap.BetterMiniMapMod",
+  "hidden": true,
+  "java": true
+}
