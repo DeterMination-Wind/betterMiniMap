@@ -2,9 +2,9 @@
   "name": "betterminimap",
   "displayName": "betterMiniMap",
   "author": "DeterMination",
-  "version": "v1.0.0",
+  "version": "v1.1.0",
   "minGameVersion": 154,
-  "description": "Client-side minimap enhancement: unit icons with facing direction, dynamic same-unit clustering by minimap pixel distance, and filter settings.",
+  "description": "Enhanced minimap overlay with directional unit icons, smart unit clustering, and optional building markers with team-aware filters. / 提供带朝向的单位图标、智能单位聚合与可筛选建筑标记的小地图增强层。",
   "main": "betterminimap.BetterMiniMapMod",
   "hidden": true,
   "java": true

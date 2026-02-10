@@ -3,7 +3,7 @@ plugins {
 }
 
 group = "betterminimap"
-version = "v1.0.0"
+version = "v1.1.0"
 
 java {
     sourceCompatibility = JavaVersion.VERSION_1_8

@@ -20,7 +20,10 @@ public class BetterMiniMapMod extends Mod {
             if (settingsAdded) return;
             settingsAdded = true;
 
+            GithubUpdateCheck.applyDefaults();
+
             ui.settings.addCategory("@settings.betterminimap", Icon.map, BetterMiniMapFeature::buildSettings);
+            GithubUpdateCheck.checkOnce();
         });
     }
 }

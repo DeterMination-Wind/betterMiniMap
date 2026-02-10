@@ -20,6 +20,7 @@ import arc.struct.ObjectSet;
 import arc.struct.Seq;
 import arc.util.Interval;
 import arc.util.Tmp;
+import betterminimap.GithubUpdateCheck;
 import mindustry.game.EventType;
 import mindustry.game.Team;
 import mindustry.gen.Building;
@@ -101,6 +102,9 @@ public class BetterMiniMapFeature {
     private static final Seq<Unit> visibleUnits = new Seq<>(false, 256);
     private static final Seq<Building> visibleBuildings = new Seq<>(false, 256);
     private static final Seq<UnitCluster> visibleUnitClusters = new Seq<>(false, 128);
+    private static int visibleRevision;
+    private static int clusteredRevision = -1;
+    private static float clusteredWorld = -1f;
 
     private static final Rect viewRect = new Rect();
     private static final Mat transform = new Mat();
@@ -126,6 +130,9 @@ public class BetterMiniMapFeature {
         Events.on(EventType.WorldLoadEvent.class, e -> {
             visibleUnits.clear();
             visibleBuildings.clear();
+            visibleUnitClusters.clear();
+            visibleRevision++;
+            clusteredRevision = -1;
         });
 
         Events.run(EventType.Trigger.update, () -> {
@@ -152,6 +159,8 @@ public class BetterMiniMapFeature {
         table.sliderPref(keyBuildingScale, 120, 10, 1000, 5, i -> i + "%");
         table.sliderPref(keyIconAlpha, 90, 10, 100, 5, i -> i + "%");
         table.sliderPref(keyIconBgAlpha, 35, 0, 100, 5, i -> i + "%");
+        table.checkPref(GithubUpdateCheck.enabledKey(), true);
+        table.checkPref(GithubUpdateCheck.showDialogKey(), true);
 
         table.pref(new SettingsMenuDialog.SettingsTable.Setting("mmplus-units-filter") {
             @Override
@@ -259,6 +268,7 @@ public class BetterMiniMapFeature {
     private static void rebuildVisibleCache(Rect viewRect) {
         visibleUnits.clear();
         visibleBuildings.clear();
+        visibleRevision++;
 
         if (unitEnabledById == null) rebuildUnitFilterCache();
         if (blockEnabledById == null) rebuildBlockFilterCache();
@@ -344,11 +354,16 @@ public class BetterMiniMapFeature {
     }
 
     private static void buildUnitClusters(float minimapScale) {
+        float scale = Math.max(0.0001f, minimapScale);
+        float clusterWorld = Math.max(0.1f, unitClusterPx / scale);
+        if (clusteredRevision == visibleRevision && Math.abs(clusterWorld - clusteredWorld) <= 0.01f) return;
+
+        clusteredRevision = visibleRevision;
+        clusteredWorld = clusterWorld;
+
         visibleUnitClusters.clear();
         if (visibleUnits.isEmpty()) return;
 
-        float scale = Math.max(0.0001f, minimapScale);
-        float clusterWorld = Math.max(0.1f, unitClusterPx / scale);
         float clusterDst2 = clusterWorld * clusterWorld;
 
         for (int i = 0; i < visibleUnits.size; i++) {
