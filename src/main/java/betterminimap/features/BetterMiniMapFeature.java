@@ -272,37 +272,37 @@ public class BetterMiniMapFeature {
 
         if (unitEnabledById == null) rebuildUnitFilterCache();
         if (blockEnabledById == null) rebuildBlockFilterCache();
+        if (player == null) return;
 
         if (enabled && unitsEnabled) {
-            Groups.unit.each(u -> {
-                if (u == null || !u.isValid()) return;
-                if (u.type == null) return;
-                if (u.type.id < 0 || u.type.id >= unitEnabledById.length) return;
-                if (!unitEnabledById[u.type.id]) return;
-                if (player == null) return;
-                boolean enemy = u.team != player.team();
-                if (enemy && !showEnemyUnits) return;
-                if (!enemy && !showFriendlyUnits) return;
-                if (!viewRect.contains(u.x, u.y)) return;
+            Team playerTeam = player.team();
+            for (int i = 0; i < Groups.unit.size(); i++) {
+                Unit u = Groups.unit.index(i);
+                if (u == null || !u.isValid() || u.type == null) continue;
+                if (u.type.id < 0 || u.type.id >= unitEnabledById.length) continue;
+                if (!unitEnabledById[u.type.id]) continue;
+                boolean enemy = u.team != playerTeam;
+                if (enemy && !showEnemyUnits) continue;
+                if (!enemy && !showFriendlyUnits) continue;
+                if (!viewRect.contains(u.x, u.y)) continue;
                 visibleUnits.add(u);
-            });
+            }
         }
 
         if (enabled && buildingsEnabled) {
-            Groups.build.each(b -> {
-                if (!(b instanceof Building)) return;
-                Building build = (Building) b;
-                if (build.block == null) return;
+            Team playerTeam = player.team();
+            for (int i = 0; i < Groups.build.size(); i++) {
+                Building build = Groups.build.index(i);
+                if (build == null || !build.isValid() || build.block == null) continue;
                 int id = build.block.id;
-                if (id < 0 || id >= blockEnabledById.length) return;
-                if (!blockEnabledById[id]) return;
-                if (player == null) return;
-                boolean enemy = build.team != player.team();
-                if (enemy && !showEnemyBuildings) return;
-                if (!enemy && !showFriendlyBuildings) return;
-                if (!viewRect.contains(build.x, build.y)) return;
+                if (id < 0 || id >= blockEnabledById.length) continue;
+                if (!blockEnabledById[id]) continue;
+                boolean enemy = build.team != playerTeam;
+                if (enemy && !showEnemyBuildings) continue;
+                if (!enemy && !showFriendlyBuildings) continue;
+                if (!viewRect.contains(build.x, build.y)) continue;
                 visibleBuildings.add(build);
-            });
+            }
         }
     }
 
