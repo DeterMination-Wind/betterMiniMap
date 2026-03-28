@@ -3,7 +3,7 @@
   "displayName": "betterMiniMap",
   "author": "DeterMination",
   "repo": "Wind-DeterMination-backup/betterMiniMap",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "minGameVersion": 154,
   "description": "Enhanced minimap overlay with directional unit icons, smart unit clustering, and optional building markers with team-aware filters. / 提供带朝向的单位图标、智能单位聚合与可筛选建筑标记的小地图增强层。",
   "main": "betterminimap.BetterMiniMapMod",
