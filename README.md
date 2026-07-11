@@ -1,4 +1,10 @@
 # betterMiniMap
+<h1 align="center">
+  <a href="https://github.com/DeterMination-Wind/betterMiniMap/releases/latest"><img src="https://img.shields.io/github/v/release/DeterMination-Wind/betterMiniMap?display_name=release&label=Latest%20Release&color=green"></a>
+  <a href="https://github.com/DeterMination-Wind/betterMiniMap/releases"><img src="https://img.shields.io/github/downloads/DeterMination-Wind/betterMiniMap/total?label=Downloads&color=blue"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/github/license/DeterMination-Wind/betterMiniMap?label=License"></a>
+  <a href="https://github.com/DeterMination-Wind/betterMiniMap"><img src="https://img.shields.io/github/stars/DeterMination-Wind/betterMiniMap?style=flat&label=Star%20this%20mod!&color=yellow"></a>
+</h1>
 
 一个专注于 **Mindustry 小地图显示体验** 的客户端模组。  
 This is a client-side mod focused on improving **Mindustry minimap readability**.
