@@ -9,11 +9,21 @@ betterMiniMap/
 |-- src/
 |   \-- main/
 |       |-- java/
+|       |   \-- betterminimap/
+|       |       |-- BetterMiniMapMod.java
+|       |       |-- GithubUpdateCheck.java
+|       |       \-- features/
+|       |           \-- BetterMiniMapFeature.java
 |       \-- resources/
+|           \-- bundles/
 |-- .gitignore
 |-- AGENTS.md
 |-- build.gradle
 |-- CHANGELOG.md
+|-- dist/
+|-- gradle/
+|-- gradlew
+|-- gradlew.bat
 |-- LICENSE
 |-- mod.json
 |-- README.md
