@@ -1,22 +1,17 @@
 # betterMiniMap
 
-A client-side Mindustry mod that improves minimap readability and unit recognition.
+> Turn the minimap into a readable battlefield overview.
 
-## Features
-- Draws minimap units with real unit `icons` (instead of geometric markers).
-- Supports facing-direction rotation for unit icons.
-- Clusters same-type, same-team units into a larger merged icon.
-- Cluster threshold uses minimap pixel distance, so it adapts to minimap zoom.
-- Includes filters and settings for units/buildings and visual tuning.
-- Automatic GitHub update check: compares against the latest GitHub release every 6 hours (falls back to the repo's mod.json when the API fails) and shows an update dialog when a new version exists (open Releases, ignore this version, or disable the check/dialog in settings).
+betterMiniMap is a Mindustry client-side minimap enhancement. It makes units, buildings, facing direction, and team positions easier to understand, especially when the battlefield is crowded or spread across a large area.
 
-## Installation
-- Download one of these artifacts from Releases (file names have no version suffix):
-  - `betterMiniMap.jar` (merged, includes dex; works on both desktop and Android)
-  - `betterMiniMap.zip`
-- Put it into your Mindustry `mods` folder and restart the game.
+The mod changes local presentation only; it does not change unit or building logic. Adjust the display density and filters to match the way you read the minimap.
+
+## Install
+
+Put the betterMiniMap JAR from Releases in Mindustry's mods directory and restart the game.
 
 ## Build
-```bash
+
+~~~powershell
 gradle deploy
-```
+~~~

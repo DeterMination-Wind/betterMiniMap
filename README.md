@@ -1,52 +1,35 @@
 # betterMiniMap
-<h1 align="center">
-  <a href="https://github.com/DeterMination-Wind/betterMiniMap/releases/latest"><img src="https://img.shields.io/github/v/release/DeterMination-Wind/betterMiniMap?display_name=release&label=Latest%20Release&color=green"></a>
-  <a href="https://github.com/DeterMination-Wind/betterMiniMap/releases"><img src="https://img.shields.io/github/downloads/DeterMination-Wind/betterMiniMap/total?label=Downloads&color=blue"></a>
-  <a href="LICENSE"><img src="https://img.shields.io/github/license/DeterMination-Wind/betterMiniMap?label=License"></a>
-  <a href="https://github.com/DeterMination-Wind/betterMiniMap"><img src="https://img.shields.io/github/stars/DeterMination-Wind/betterMiniMap?style=flat&label=Star%20this%20mod!&color=yellow"></a>
-</h1>
 
-一个专注于 **Mindustry 小地图显示体验** 的客户端模组。  
-This is a client-side mod focused on improving **Mindustry minimap readability**.
+> 让小地图从抽象符号变成真正可读的战场概览。
 
-## 中文说明
+betterMiniMap 是一个 Mindustry 客户端小地图增强模组。它让你更容易分辨单位、建筑、方向和敌我位置，尤其适合单位密集、视野分散或需要频繁依靠小地图指挥的战斗。
 
-### 功能
-- 用单位 `icon` 显示小地图单位（替代三角/方块标记）。
-- 支持单位朝向旋转显示。
-- 同类型同队单位会按小地图像素距离动态聚合为一个放大图标。
-- 聚合阈值基于小地图像素距离，随小地图缩放动态生效。
-- 支持单位/建筑筛选与显示参数调整。
-- GitHub 自动更新检查：每隔 6 小时对比 GitHub Releases 最新版本（API 失败时回退读取仓库 mod.json），发现新版本时弹出更新提示（可打开 Releases 下载、忽略该版本，可在设置中关闭检查或弹窗）。
+模组只改善本地信息呈现，不改变单位和建筑的游戏逻辑。显示密度和筛选方式可以按自己的阅读习惯调整。
 
-### 安装
-- 从 Releases 下载产物（文件名不含版本号）：
-  - `betterMiniMap.jar`（已内置 dex，桌面与 Android 通用）
-  - `betterMiniMap.zip`
-- 将文件放入 Mindustry 的 `mods` 目录并重启游戏。
+## 安装
 
-### 开发构建
-```bash
+将 Release 中的 betterMiniMap JAR 放入 Mindustry 的 mods 目录并重启游戏。
+
+## 构建
+
+~~~powershell
 gradle deploy
-```
+~~~
 
 ## English
 
-### Features
-- Replaces minimap unit markers with real unit `icons`.
-- Supports icon rotation based on unit facing direction.
-- Dynamically clusters same-type, same-team units into a larger icon.
-- Cluster threshold is based on minimap pixel distance, so it scales with zoom.
-- Includes unit/building filters and visual tuning settings.
-- Automatic GitHub update check: compares against the latest GitHub release every 6 hours (falls back to the repo's mod.json when the API fails) and shows an update dialog when a new version exists (open Releases, ignore this version, or disable the check/dialog in settings).
+> Turn the minimap into a readable battlefield overview.
 
-### Install
-- Download one of these artifacts from Releases (file names have no version suffix):
-  - `betterMiniMap.jar` (merged, includes dex; works on both desktop and Android)
-  - `betterMiniMap.zip`
-- Put it into your Mindustry `mods` directory and restart the game.
+betterMiniMap is a Mindustry client-side minimap enhancement. It makes units, buildings, facing direction, and team positions easier to understand, especially when the battlefield is crowded or spread across a large area.
 
-### Build
-```bash
+The mod changes local presentation only; it does not change unit or building logic. Adjust the display density and filters to match the way you read the minimap.
+
+## Install
+
+Put the betterMiniMap JAR from Releases in Mindustry's mods directory and restart the game.
+
+## Build
+
+~~~powershell
 gradle deploy
-```
+~~~
