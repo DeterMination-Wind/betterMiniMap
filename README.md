@@ -1,6 +1,7 @@
 # betterMiniMap
 
-> [NOTE] 若有反馈，请发送反馈到bugsoc@qq.com / If you have any feedback, please send it to bugsoc@qq.com
+> [!NOTE]
+> 若有反馈，请发送反馈到bugsoc@qq.com / If you have any feedback, please send it to bugsoc@qq.com
 
 > 让小地图从抽象符号变成真正可读的战场概览。
 
