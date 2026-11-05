@@ -1,5 +1,7 @@
 # betterMiniMap
 
+> [NOTE] 若有反馈，请发送反馈到bugsoc@qq.com / If you have any feedback, please send it to bugsoc@qq.com
+
 > 让小地图从抽象符号变成真正可读的战场概览。
 
 betterMiniMap 是一个 Mindustry 客户端小地图增强模组。它让你更容易分辨单位、建筑、方向和敌我位置，尤其适合单位密集、视野分散或需要频繁依靠小地图指挥的战斗。
